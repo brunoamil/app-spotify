@@ -1,5 +1,7 @@
-function App() {
-  return <h1>Olá, Spotify!</h1>;
-}
+import { Header } from "./components/Header";
+
+const App = () => {
+  return <Header />;
+};
 
 export default App;
