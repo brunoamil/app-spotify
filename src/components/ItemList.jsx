@@ -1,7 +1,7 @@
 import { SingleItem } from "./SingleItem";
 
 export const ItemList = (props) => {
-  const { title } = props;
+  const { title, items } = props;
 
   return (
     <div className="item-list">
@@ -13,10 +13,12 @@ export const ItemList = (props) => {
       </div>
 
       <div className="item-list__container">
-        <SingleItem />
-        <SingleItem />
-        <SingleItem />
-        <SingleItem />
+        {Array(items).fill().map((item) => {
+          return (
+            <SingleItem key={item} />
+          )
+        })}
+        
       </div>
     </div>
   );
