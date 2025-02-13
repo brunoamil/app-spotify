@@ -1,5 +1,7 @@
+import { Main } from "../components/Main"
+
 export const Artists = () => {
     return (
-        <h2>Artists</h2>
+        <Main type="artists" />
     )
 }

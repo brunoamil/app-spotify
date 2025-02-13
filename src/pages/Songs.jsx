@@ -1,5 +1,5 @@
+import { Main } from "../components/Main";
+
 export const Songs = () => {
-    return (
-        <h2>Songs</h2>
-    )
-}
+  return <Main type="songs" />;
+};
