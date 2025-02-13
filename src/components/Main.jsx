@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div className="main">
       <ItemList title="Artistas" items={10} itemsArray={artistArray} path="/artists" idPath="/artist" />
-      <ItemList title="Musicas" items={20} itemsArray={songsArray} path="/songs" idPath="/songs" />
+      <ItemList title="Musicas" items={20} itemsArray={songsArray} path="/songs" idPath="/song" />
     </div>
   );
 };
