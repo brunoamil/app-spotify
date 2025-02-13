@@ -4,8 +4,10 @@ import logoSpotify from "../assets/logo/spotify-logo.png";
 export const Header = () => {
   return (
     <div className="header">
-      <img src={logoSpotify} alt="Logo Spotify" />
-      <Link  className="header__link" to="/">
+      <Link to="/">
+        <img src={logoSpotify} alt="Logo Spotify" />
+      </Link>
+      <Link className="header__link" to="/">
         <h1>Spotify</h1>
       </Link>
     </div>
