@@ -36,7 +36,7 @@ export const Song = () => {
         <Link to={`/artist/${artistObj._id}`} className="song__artist-image">
             <img width={75} height={75} src={`${artistObj.image}`} alt={`Imagem artista do ${artist}`} />
         </Link>
-        <Player duration={duration} randomArtist={randomArtist} randomToArtist={randomToArtist} />
+        <Player duration={duration} audio={audio} randomArtist={randomArtist} randomToArtist={randomToArtist} />
         <div>
             <p className="song__name">{name}</p>
             <p>{artist}</p>
