@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const Player = ({ duration, randomArtist, audio, randomToArtist }) => {
   const audioPlayer = useRef();
+  const playerProgress = useRef();
   const [isPlay, setIsPlay] = useState(false);
   const [currentTime, setCurrentTime] = useState(formatTime(0));
   function playPause() {
@@ -29,6 +30,10 @@ export const Player = ({ duration, randomArtist, audio, randomToArtist }) => {
 
     return `${minutes}:${seconds}`;
   }
+
+  // function timeInSeconds = () => {
+
+  // }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -55,7 +60,7 @@ export const Player = ({ duration, randomArtist, audio, randomToArtist }) => {
       <div className="player__progress">
         <p>{currentTime}</p>
         <div className="player__bar">
-          <div className="player__bar-progress"></div>
+          <div ref={playerProgress} className="player__bar-progress"></div>
         </div>
         <p>{duration}</p>
       </div>
