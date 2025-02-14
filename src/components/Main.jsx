@@ -4,6 +4,8 @@ import { songsArray } from "../assets/database/songs";
 
 export const Main = (props) => {
   const { type } = props;
+
+
   return (
     <div className="main">
       {type === "artists" || type === undefined ? (

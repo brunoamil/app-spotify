@@ -8,7 +8,7 @@ export const Song = () => {
   
  
 
-  const {image, name, duration, artist, audio} = songsArray.filter(song => song.id === Number(id))[0];
+  const {image, name, duration, artist, audio} = songsArray.filter(song => song._id === id)[0];
   
   const artistObj = artistArray.filter(current => current.name === artist)[0];
 
@@ -19,13 +19,13 @@ export const Song = () => {
   const randomIndex = Math.floor(Math.random() * (songs.length - 1));
   const randomToIndex = Math.floor(Math.random() * (songs.length - 1));
 
-  const randomArtist = songs[randomIndex].id;
-  const randomToArtist = songs[randomToIndex].id;
+  const randomArtist = songs[randomIndex]._id;
+  const randomToArtist = songs[randomToIndex]._id;
 
   return (
     <div className="song">
       <div className="song__container">
-        <Link to={`/artist/${artistObj.id}`} className="song__image-container">
+        <Link to={`/artist/${artistObj._id}`} className="song__image-container">
           <img
             src={image}
             alt={`Imagem da musica ${name}`}
@@ -33,7 +33,7 @@ export const Song = () => {
         </Link>
       </div>
       <div className="song__bar">
-        <Link to={`/artist/${artistObj.id}`} className="song__artist-image">
+        <Link to={`/artist/${artistObj._id}`} className="song__artist-image">
             <img width={75} height={75} src={`${artistObj.image}`} alt={`Imagem artista do ${artist}`} />
         </Link>
         <Player duration={duration} randomArtist={randomArtist} randomToArtist={randomToArtist} />
