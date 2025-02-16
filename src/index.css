@@ -542,7 +542,7 @@ img {
 
   height: 100%;
   width: var(--_progress);
-  background-color: white;
+  background-color: rgb(39, 213, 65);
   transition: width var(--transition-function) var(--transition-duration);
 }
 
