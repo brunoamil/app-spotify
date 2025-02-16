@@ -10,5 +10,6 @@ export default defineConfig({
   server: {
     host: "0.0.0.0", // Aqui está o segredo
     port: 5173, // Render usa a variável PORT
+    allowedHosts: ['app-spotify-aljz.onrender.com'],
   },
 });
