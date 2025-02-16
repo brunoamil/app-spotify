@@ -13,6 +13,9 @@ export const Player = ({ duration, randomArtist, audio, randomToArtist }) => {
   const playerProgress = useRef();
   const [isPlay, setIsPlay] = useState(false);
   const [currentTime, setCurrentTime] = useState(formatTime(0));
+  const durationInSeconds = timeInSeconds(duration);
+  
+  console.log("durationInSeconds", durationInSeconds)
   function playPause() {
     isPlay ? audioPlayer.current.pause() : audioPlayer.current.play();
     setIsPlay(!isPlay);
@@ -31,13 +34,17 @@ export const Player = ({ duration, randomArtist, audio, randomToArtist }) => {
     return `${minutes}:${seconds}`;
   }
 
-  // function timeInSeconds = () => {
-
-  // }
+  function timeInSeconds (timeString) {
+    const splitArray = timeString.split(':');
+    const minutes = Number(splitArray[0]);
+    const seconds = Number(splitArray[1]);
+    return seconds + minutes * 60;
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (isPlay) setCurrentTime(formatTime(audioPlayer.current.currentTime));
+      playerProgress.current.style.setProperty("--_progress", ((audioPlayer.current.currentTime / durationInSeconds) * 100) + "%")
     }, 1000);
     return () => clearInterval(intervalId);
   }, [isPlay]);
